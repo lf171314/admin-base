@@ -1,10 +1,187 @@
-body {
-  font-family: 'Microsoft YaHei', 'PingFang SC', Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: $primary--text--color;
+@import './common/_variables';
+@import './common/mixins';
+// 全局的基本样式类
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
-.not-found_page {
-  padding-top: 200px;
+// 布局样式
+body {
+  height: 100vh;
+  background-color: #f0f2f5;
+  line-height: 22px;
+  user-select: none;
+  font-size: 14px;
+  color: $base--text--color;
+  font-family: 'Microsoft YaHei', PingFangSC, 'PingFangSC-Regular', 'Segoe UI', Roboto,
+    'Helvetica Neue', Helvetica, PingFang, 'Source Sans Pro', 'Helvetice Neue', Arial, 'sans-serif',
+    SimSun;
+}
+
+html,
+body,
+#app,
+#container-layout {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+// 公共scss
+.pos-r {
+  position: relative;
+}
+
+.pos-a {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.static {
+  position: static;
+}
+
+.small {
+  font-size: 85%;
+}
+
+@for $i from 1 to 6 {
+  h#{$i},
+  .h#{$i} {
+    margin: 0;
+  }
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+// dispaly 样式类
+$display--list: block, inline-block, inline, none;
+@each $display in $display--list {
+  .#{$display} {
+    display: $display;
+    @if ($display == 'inline-block') {
+      vertical-align: middle;
+    }
+  }
+}
+
+// 文本对齐 样式类
+$text--list: left, center, right;
+@each $text in $text--list {
+  .text-#{$text} {
+    text-align: $text;
+  }
+}
+
+// 浮动 样式类
+$direction: left, right, none;
+@each $dir in $direction {
+  .float-#{$dir} {
+    float: $dir;
+  }
+}
+/*
+  $base--text--color: #333 !default;
+  $regular--text--color: #666 !default;
+  $muted--text--color: #999 !default;
+  $primary--text--color: #0091ff !default;
+  $danger--text--color: #f56c6c !default;
+  $success--text--color: #67c23a !default;
+  $warning--text--color: #e6a23c !default;
+*/
+// 生成字体类与背景类
+$typeList: (
+  'base': $base--text--color,
+  'regular': $regular--text--color,
+  'muted': $muted--text--color,
+  'primary': $primary--text--color,
+  'success': $success--text--color,
+  'warning': $warning--text--color,
+  'danger': $danger--text--color
+);
+
+@each $key, $value in $typeList {
+  .text-#{$key} {
+    color: $value;
+    @include setHover($value);
+    @if ($key == 'link') {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .bg-#{$key} {
+    background-color: $value;
+  }
+}
+
+// 字符串截取
+.text-overflow {
+  @include text-overflow;
+}
+
+// 图片容器样式
+.img-wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// iconfont
+.iconfont {
+  margin-right: 6px;
+}
+
+// ul 处理
+ul,
+ol,
+.list-unstyle {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.block {
+  width: 100%;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+dl,
+dt,
+dd {
+  margin: 0;
+}
+
+mark {
+  background-color: transparent;
+}
+
+/**
+  * author:lfj
+  * 解决： 输入中文时光标上移问题
+  */
+input[type='number'] {
+  line-height: 0px !important;
+}
+
+// 手型处理
+.pointer {
+  cursor: pointer;
 }

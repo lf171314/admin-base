@@ -4,5 +4,6 @@ module.exports = {
     development: {
       plugins: ['dynamic-import-node']
     }
-  }
+  },
+  plugins: [['import', { libraryName: 'ant-design-vue', libraryDirectory: 'es', style: true }]]
 }

@@ -1,2 +1,6 @@
 import 'normalize.css'
+import 'nprogress/nprogress.css'
+import 'ant-design-vue/dist/antd.css'
+import './ant.scss'
 import './index.scss'
+import './pages/layout.scss'

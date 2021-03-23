@@ -1,0 +1,25 @@
+// 404 页面
+.not-found_page {
+  padding-top: 200px;
+  text-align: center;
+  img {
+    margin: 0 auto;
+  }
+  a {
+    color: $primary--text--color;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0 6px;
+    &:hover {
+      text-decoration: underline;
+    }
+    & + a {
+      border-left: 1px solid $muted--text--color;
+    }
+  }
+}
+
+// layout
+.admin-layout_menu {
+  height: 100vh;
+}

@@ -1,0 +1,31 @@
+@import './_variables';
+
+// 字符串截取样式
+@mixin text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@mixin setHover($color) {
+  &:hover,
+  &:active,
+  &:link,
+  &:visited,
+  &:focus {
+    color: $color;
+  }
+}
+
+@mixin clearfix() {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
