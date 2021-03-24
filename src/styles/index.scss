@@ -2,8 +2,8 @@
 @import './common/mixins';
 // 全局的基本样式类
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -11,13 +11,24 @@
 body {
   height: 100vh;
   background-color: #f0f2f5;
+  color: $base--text--color;
+  font-family:
+    'Microsoft YaHei',
+    PingFangSC,
+    PingFangSC-Regular,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Helvetica,
+    PingFang,
+    'Source Sans Pro',
+    'Helvetice Neue',
+    Arial,
+    SimSun,
+    sans-serif;
+  font-size: 14px;
   line-height: 22px;
   user-select: none;
-  font-size: 14px;
-  color: $base--text--color;
-  font-family: 'Microsoft YaHei', PingFangSC, 'PingFangSC-Regular', 'Segoe UI', Roboto,
-    'Helvetica Neue', Helvetica, PingFang, 'Source Sans Pro', 'Helvetice Neue', Arial, 'sans-serif',
-    SimSun;
 }
 
 html,
@@ -63,9 +74,11 @@ body,
 
 // dispaly 样式类
 $display--list: block, inline-block, inline, none;
+
 @each $display in $display--list {
   .#{$display} {
     display: $display;
+
     @if ($display == 'inline-block') {
       vertical-align: middle;
     }
@@ -74,6 +87,7 @@ $display--list: block, inline-block, inline, none;
 
 // 文本对齐 样式类
 $text--list: left, center, right;
+
 @each $text in $text--list {
   .text-#{$text} {
     text-align: $text;
@@ -82,11 +96,13 @@ $text--list: left, center, right;
 
 // 浮动 样式类
 $direction: left, right, none;
+
 @each $dir in $direction {
   .float-#{$dir} {
     float: $dir;
   }
 }
+
 /*
   $base--text--color: #333 !default;
   $regular--text--color: #666 !default;
@@ -113,6 +129,7 @@ $typeList: (
     @include setHover($value);
     @if ($key == 'link') {
       text-decoration: none;
+
       &:hover {
         text-decoration: underline;
       }
@@ -134,6 +151,7 @@ $typeList: (
   display: block;
   width: 100%;
   height: 100%;
+
   img {
     display: block;
     width: 100%;
@@ -150,8 +168,8 @@ $typeList: (
 ul,
 ol,
 .list-unstyle {
-  margin: 0;
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 

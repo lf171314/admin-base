@@ -97,6 +97,9 @@ module.exports = {
     loaderOptions: {
       scss: {
         prependData: `@import "@/styles/common/_variables.scss";\n@import "@/styles/common/_mixins.scss";`
+      },
+      less: {
+        javascriptEnabled: true
       }
     }
   },

@@ -2,9 +2,9 @@
 
 // 字符串截取样式
 @mixin text-overflow {
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @mixin inline-block {
@@ -24,8 +24,8 @@
 
 @mixin clearfix() {
   &::after {
-    content: '';
     display: block;
     clear: both;
+    content: '';
   }
 }
