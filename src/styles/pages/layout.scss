@@ -6,15 +6,15 @@
     margin: 0 auto;
   }
   a {
-    color: $primary--text--color;
-    text-decoration: none;
-    cursor: pointer;
     padding: 0 6px;
+    color: $primary--text--color;
+    cursor: pointer;
+    text-decoration: none;
+    &+a {
+      border-left: 1px solid $muted--text--color;
+    }
     &:hover {
       text-decoration: underline;
-    }
-    & + a {
-      border-left: 1px solid $muted--text--color;
     }
   }
 }

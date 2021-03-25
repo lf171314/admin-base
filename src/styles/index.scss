@@ -129,7 +129,6 @@ $typeList: (
     @include setHover($value);
     @if ($key == 'link') {
       text-decoration: none;
-
       &:hover {
         text-decoration: underline;
       }
