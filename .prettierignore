@@ -2,3 +2,11 @@ node_modules/
 dist/
 *.log
 *-error.log
+*.css
+*.scss
+*.less
+*.jpg
+*.png
+*.eot
+*.ttf
+*.woff

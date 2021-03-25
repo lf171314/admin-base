@@ -1,7 +1,9 @@
 <template>
-  <a-layout-content class="admin-layout_body"></a-layout-content>
+  <div></div>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'view-main'
+}
 </script>

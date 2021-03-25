@@ -1,0 +1,11 @@
+*.js
+*.jpg
+*.png
+*.eot
+*.ttf
+*.woff
+*.log
+*-error.log
+
+dist/
+node_modules/

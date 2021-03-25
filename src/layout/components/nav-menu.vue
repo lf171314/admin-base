@@ -1,5 +1,5 @@
 <template>
-  <a-menu class="admin-layout_menu">
+  <a-menu mode="inline" class="admin-layout_menu" theme="dark">
     <a-menu-item key="1">
       <a-icon type="pie-chart" />
       <span>Option 1</span>

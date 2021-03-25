@@ -29,3 +29,37 @@
     content: '';
   }
 }
+
+@mixin border() {
+  border: 1px solid #ccc
+}
+
+// $size: (
+//   small: 2px,
+//   large: 4px,
+//   circle: 50%,
+//   custom: ''
+// )
+
+@mixin radius($size) {
+  $radius: 0;
+  @if ($size == 'small') {
+    $radius: 2px;
+  } @else if ($size == 'large'){
+    $radius: 4px;
+  } @else if ($size == 'circle') {
+    $radius: 50%;
+  } @else if ($size) {
+    $radius: $size;
+  }
+  border-radius: $radius;
+}
+
+@mixin shadow($isBase: false) {
+  @if ($isBase) {
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)
+  } @else {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12),
+    0 0 6px rgba(0, 0, 0, .04);
+  }
+}
