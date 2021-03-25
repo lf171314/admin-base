@@ -3,6 +3,7 @@ export * from './query'
 export * from './merge'
 export * from './storage'
 export * from './constants'
+export * from './user'
 
 export const noop = () => {}
 
